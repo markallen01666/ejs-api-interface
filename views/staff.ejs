@@ -15,10 +15,24 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <h1>Staff</h1>
           <% for (var i = 0; i < employees.length; i++) { %>
-            <div class="post-preview">
               <h2 class="post-title">
                 <%= employees[i].firstName %> <%= employees[i].lastName %>
-             </h2>
+              </h2>
+              <p>
+                ID: <%= employees[i].staffId %> 
+              </p>
+              <p>
+                Office: <%= employees[i].office %> 
+              </p>
+              <p>
+                Position: <%= employees[i].position %> <%= employees[i].telephone %>
+              </p>
+              <p>
+                Telephone: <%= employees[i].telephone %> 
+              </p>
+              <p>
+                Email: <%= employees[i].email %> 
+              </p>
             <hr />
           <% } %>
         </div>

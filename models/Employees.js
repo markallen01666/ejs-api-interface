@@ -26,7 +26,7 @@ const EmployeeSchema = new Schema({
     type: String,
     required: true
   },
-  Telephone: {
+  telephone: {
     type: String
   },
   email: {
