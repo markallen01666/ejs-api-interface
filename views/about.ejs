@@ -1,0 +1,26 @@
+<!-- Home page - view -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header'); -%>
+
+  <body>
+    <%- include('layouts/navbar'); -%>
+
+    <%- include('layouts/page-header'); -%>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h1>About this site</h1>
+          <p>This is a demo of a user interface providing CRUD (Create, Read, Update, Delete) functionality for staff at a fictional company. The app is built using Node, EJS, Express, MongoDB, and Mongoose. Node hosting is through Heroku while MongoDB hosting is through MongoDB Atlas.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <%- include('layouts/footer'); -%> <%- include('layouts/scripts'); -%>
+  </body>
+</html>
