@@ -6,12 +6,24 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const ejs = require("ejs");
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+)
 
 // controllers
 const getOfficesController = require('./controllers/getOfficesController')
 const getEmployeesController = require('./controllers/getEmployeesController')
-const homeController = require("./controllers/home");
-const aboutController = require("./controllers/about");
+const homeController = require("./controllers/homeController");
+const aboutController = require("./controllers/aboutController");
+const addOfficeController = require("./controllers/addOfficeController")
+const saveOfficeController = require("./controllers/saveOfficeController")
+const addEmployeeController = require("./controllers/addEmployeeController")
+const saveEmployeeController = require("./controllers/saveEmployeeController")
 
 // connect database
 mongoose.connect('mongodb+srv://haleon55:gyc2eivi16mrejC7@cluster0-wvhp3.mongodb.net/company1', {
@@ -28,14 +40,15 @@ app.set("view engine", "ejs");
 app.get("/", homeController);
 app.get("/about", aboutController)
 app.get("/offices", getOfficesController)
+app.get("/offices/add", addOfficeController)
 app.get("/staff", getEmployeesController)
+app.get("/staff/add", addEmployeeController)
+app.post("/offices/add", saveOfficeController)
+app.post("/staff/add", saveEmployeeController)
 app.use((req, res) => {
   res.render('404')
 })
 
-
-// app.get('/employees', getEmployeesController)
-// app.get('/offices', getOfficesController)
 
 // Port allocation and default for Heroku commit
 let port = process.env.PORT

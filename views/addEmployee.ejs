@@ -1,0 +1,129 @@
+<!-- Create new employee page - view -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header'); -%>
+
+  <body>
+    <%- include('layouts/navbar'); -%> 
+    
+    <%- include('layouts/page-header'); -%>
+
+    <!-- Main Content -->
+    <div class="container">
+      <h1>Add a new employee to database</h1>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <form action="/staff/add" method="POST">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>ID</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="employee ID code"
+                  id="staffId"
+                  name="staffId"
+                  required
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>First name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="employee first name"
+                  id="firstName"
+                  name="firstName"
+                  required
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Last name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="semployee last name"
+                  id="lastName"
+                  name="lastName"
+                  required
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Office</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="office"
+                  placeholder="home office"
+                  id="office"
+                  required
+                />
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Position</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="position"
+                  placeholder="employee role"
+                  id="position"
+                  required
+                />
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Telephone</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="telephone"
+                  placeholder="contact telephone number"
+                  id="telephone"
+                />
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="email"
+                  placeholder="email address"
+                  id="email"
+                />
+              </div>
+            </div>
+            <br />
+            <div class="form-group">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="addEmployeeButton"
+              >
+                Add employee
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <%- include('layouts/footer'); -%> <%- include('layouts/scripts'); -%>
+  </body>
+</html>
