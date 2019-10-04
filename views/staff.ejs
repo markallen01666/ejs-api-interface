@@ -26,7 +26,7 @@
                 Office: <%= employees[i].office %> 
               </p>
               <p>
-                Position: <%= employees[i].position %> <%= employees[i].telephone %>
+                Position: <%= employees[i].position %> 
               </p>
               <p>
                 Telephone: <%= employees[i].telephone %> 
@@ -34,12 +34,10 @@
               <p>
                 Email: <%= employees[i].email %> 
               </p>
-              <a href="/staff/edit">
-                <% conveyData = employees[i] %>
+              <a href="/staff/edit/<%= employees[i]._id %>">
                 <strong>Edit</strong>
               </a>
-              <a href="/staff/delete">
-                <% conveyData = employees[i] %>
+              <a href="/staff/delete/<%= employees[i]._id %>">
                 <strong>Delete</strong>
               </a>
             <hr />

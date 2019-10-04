@@ -1,6 +1,8 @@
 // delete office - controller
 
+const Offices = require('../models/Offices.js')
+
 module.exports = async (req, res) => {
-  console.log(conveyData)
-  res.render("index");
-};
+  const office = await Offices.deleteOne({ _id: req.params.id })
+    res.redirect("/offices")
+}

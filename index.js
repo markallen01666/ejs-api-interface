@@ -28,10 +28,8 @@ const deleteOfficeController = require("./controllers/deleteOfficeController")
 const addEmployeeController = require("./controllers/addEmployeeController")
 const saveEmployeeController = require("./controllers/saveEmployeeController")
 const editEmployeeController = require("./controllers/editEmployeeController")
+const updateEmployeeController = require("./controllers/updateEmployeeController")
 const deleteEmployeeController = require("./controllers/deleteEmployeeController")
-
-// globals
-global.conveyData = null;   // data to transfer betwwen controllers
 
 // Make Mongoose use `findOneAndUpdate()`. 
 mongoose.set('useFindAndModify', false);
@@ -61,6 +59,7 @@ app.get("/staff/delete/:id", deleteEmployeeController)
 app.post("/offices/add", saveOfficeController)
 app.post("/offices/edit/:id", updateOfficeController)
 app.post("/staff/add", saveEmployeeController)
+app.post("/staff/edit/:id", updateEmployeeController)
 app.use((req, res) => {
   res.render('404')
 })

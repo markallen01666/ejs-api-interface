@@ -1,4 +1,4 @@
-<!-- Create new employee page - view -->
+<!-- Edit employee page - view -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +11,10 @@
 
     <!-- Main Content -->
     <div class="container">
-      <h1>Add a new employee to database</h1>
+      <h1>Edit employee</h1>
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <form action="/staff/add" method="POST">
+          <form action="/staff/edit/<%= dbId %>" method="POST">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label>ID</label>
@@ -24,6 +24,7 @@
                   placeholder="employee ID code"
                   id="staffId"
                   name="staffId"
+                  value="<%= employee.staffId %>"
                   required
                 />
                 <p class="help-block text-danger"></p>
@@ -38,6 +39,7 @@
                   placeholder="employee first name"
                   id="firstName"
                   name="firstName"
+                  value="<%= employee.firstName %>"
                   required
                 />
                 <p class="help-block text-danger"></p>
@@ -52,6 +54,7 @@
                   placeholder="employee last name"
                   id="lastName"
                   name="lastName"
+                  value="<%= employee.lastName %>"
                   required
                 />
                 <p class="help-block text-danger"></p>
@@ -66,6 +69,7 @@
                   name="office"
                   placeholder="home office"
                   id="office"
+                  value="<%= employee.office %>"
                   required
                 />
               </div>
@@ -79,6 +83,7 @@
                   name="position"
                   placeholder="employee role"
                   id="position"
+                  value="<%= employee.position %>"
                   required
                 />
               </div>
@@ -92,6 +97,7 @@
                   name="telephone"
                   placeholder="contact telephone number"
                   id="telephone"
+                  value="<%= employee.telephone %>"
                 />
               </div>
             </div>
@@ -104,6 +110,7 @@
                   name="email"
                   placeholder="email address"
                   id="email"
+                  value="<%= employee.email %>"
                 />
               </div>
             </div>
@@ -114,7 +121,7 @@
                 class="btn btn-primary"
                 id="addEmployeeButton"
               >
-                Add employee
+                Update employee
               </button>
             </div>
           </form>
