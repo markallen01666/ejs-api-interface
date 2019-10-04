@@ -1,0 +1,125 @@
+<!-- Edit office page - view -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('layouts/header'); -%>
+
+  <body>
+    <%- include('layouts/navbar'); -%>
+
+    <%- include('layouts/page-header'); -%>
+
+    <!-- Main Content -->
+    <div class="container">
+      <h1>Edit office</h1>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <form
+            action="/offices/edit/<%= dbId %>"
+            method="POST"
+          >
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Edit Office</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="office name"
+                  id="office"
+                  name="office"
+                  value="<%= office.office %>"
+                  required
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Building</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="building name"
+                  id="building"
+                  name="building"
+                  value="<%= office.building %>"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="street number"
+                  id="number"
+                  name="number"
+                  value="<%= office.number %>"
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Street</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="street"
+                  placeholder="street name"
+                  id="street"
+                  value="<%= office.street %>"
+                  required
+                />
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Town</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="town"
+                  placeholder="town/city name"
+                  id="town"
+                  value="<%= office.town %>"
+                  required
+                />
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Postcode</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="postcode"
+                  placeholder="postcode"
+                  id="postcode"
+                  value="<%= office.postcode %>"
+                  required
+                />
+              </div>
+            </div>
+            <br />
+            <div class="form-group">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="addOfficeButton"
+              >
+                Update office
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <%- include('layouts/footer'); -%> <%- include('layouts/scripts'); -%>
+  </body>
+</html>

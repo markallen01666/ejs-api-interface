@@ -22,8 +22,19 @@ const homeController = require("./controllers/homeController");
 const aboutController = require("./controllers/aboutController");
 const addOfficeController = require("./controllers/addOfficeController")
 const saveOfficeController = require("./controllers/saveOfficeController")
+const editOfficeController = require("./controllers/editOfficeController")
+const updateOfficeController = require("./controllers/updateOfficeController")
+const deleteOfficeController = require("./controllers/deleteOfficeController")
 const addEmployeeController = require("./controllers/addEmployeeController")
 const saveEmployeeController = require("./controllers/saveEmployeeController")
+const editEmployeeController = require("./controllers/editEmployeeController")
+const deleteEmployeeController = require("./controllers/deleteEmployeeController")
+
+// globals
+global.conveyData = null;   // data to transfer betwwen controllers
+
+// Make Mongoose use `findOneAndUpdate()`. 
+mongoose.set('useFindAndModify', false);
 
 // connect database
 mongoose.connect('mongodb+srv://haleon55:gyc2eivi16mrejC7@cluster0-wvhp3.mongodb.net/company1', {
@@ -41,9 +52,14 @@ app.get("/", homeController);
 app.get("/about", aboutController)
 app.get("/offices", getOfficesController)
 app.get("/offices/add", addOfficeController)
+app.get("/offices/edit/:id", editOfficeController)
+app.get("/offices/delete/:id", deleteOfficeController)
 app.get("/staff", getEmployeesController)
 app.get("/staff/add", addEmployeeController)
+app.get("/staff/edit/:id", editEmployeeController)
+app.get("/staff/delete/:id", deleteEmployeeController)
 app.post("/offices/add", saveOfficeController)
+app.post("/offices/edit/:id", updateOfficeController)
 app.post("/staff/add", saveEmployeeController)
 app.use((req, res) => {
   res.render('404')

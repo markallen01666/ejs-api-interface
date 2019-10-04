@@ -34,6 +34,14 @@
               <p>
                 Email: <%= employees[i].email %> 
               </p>
+              <a href="/staff/edit">
+                <% conveyData = employees[i] %>
+                <strong>Edit</strong>
+              </a>
+              <a href="/staff/delete">
+                <% conveyData = employees[i] %>
+                <strong>Delete</strong>
+              </a>
             <hr />
           <% } %>
         </div>
