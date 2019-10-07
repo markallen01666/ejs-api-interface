@@ -10,15 +10,16 @@
     <%- include('layouts/page-header'); -%>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="container main-content">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <h1>Staff</h1>
-          <a href="/staff/add">Add new staff member</a>
+          <strong><a href="/staff/add">Add new staff member</a></strong>
+          <hr />
           <% for (var i = 0; i < employees.length; i++) { %>
-              <h2 class="post-title">
+              <h2 class="text-info">
                 <%= employees[i].firstName %> <%= employees[i].lastName %>
-              </h2>
+              </h2>    
               <p>
                 ID: <%= employees[i].staffId %> 
               </p>
@@ -37,7 +38,8 @@
               <a href="/staff/edit/<%= employees[i]._id %>">
                 <strong>Edit</strong>
               </a>
-              <a href="/staff/delete/<%= employees[i]._id %>">
+              &nbsp;
+              <a href="/staff/delete/<%= employees[i]._id %>" onclick="return confirm('Are you sure?')">
                 <strong>Delete</strong>
               </a>
             <hr />
@@ -45,8 +47,6 @@
         </div>
       </div>
     </div>
-
-    <hr />
 
     <%- include('layouts/footer'); -%> <%- include('layouts/scripts'); -%>
   </body>

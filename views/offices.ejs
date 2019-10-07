@@ -10,14 +10,15 @@
     <%- include('layouts/page-header'); -%>
     
     <!-- Main Content -->
-    <div class="container">
+    <div class="container main-content">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <h1>Offices</h1>
-          <a href="/offices/add">Add new office</a>
+          <strong><a href="/offices/add">Add new office</a></strong>
+          <hr />
           <% for (var i = 0; i < offices.length; i++) { %>
-            <div class="post-preview">
-              <h2 class="post-title">
+            <div class="">
+              <h2 class="text-info">
                 <%= offices[i].office %>
               </h2>
               <p>
@@ -38,16 +39,16 @@
               <a href="/offices/edit/<%= offices[i]._id %>">
                 <strong>Edit</strong>
               </a>
-              <a href="/offices/delete/<%= offices[i]._id %>">
+              &nbsp;
+              <a href="/offices/delete/<%= offices[i]._id %>" onclick="return confirm('Are you sure?')">
                 <strong>Delete</strong>
               </a>
               <hr />
             </div>
             <% } %>
+          </div>
       </div>
     </div>
-
-    <hr />
 
     <%- include('layouts/footer'); -%> <%- include('layouts/scripts'); -%>
   </body>

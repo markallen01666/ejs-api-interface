@@ -10,11 +10,11 @@
     <%- include('layouts/page-header'); -%>
 
     <!-- Main Content -->
-    <div class="container">
-      <h1>Edit employee</h1>
+    <div class="container main-content">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <form action="/staff/edit/<%= dbId %>" method="POST">
+            <h1>Edit employee</h1>
+            <form action="/staff/edit/<%= dbId %>" method="POST">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label>ID</label>
@@ -128,8 +128,6 @@
         </div>
       </div>
     </div>
-
-    <hr />
 
     <%- include('layouts/footer'); -%> <%- include('layouts/scripts'); -%>
   </body>
