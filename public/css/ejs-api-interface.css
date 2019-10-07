@@ -14,11 +14,11 @@ body {
 }
 
 h1 {
-  font-size: 5vh;
+  font-size: 6vh;
 }
 
 h2 {
-  font-size: 4vh;
+  font-size: 5vh;
 }
 
 h2, p{
@@ -42,9 +42,9 @@ form {
 }
 
 .company-name {
-  font-size: 10vh;
+  font-size: 6vw;
 }
 
 .subheading {
-  font-size: 6vh;
+  font-size: 4vw;
 }
