@@ -1,4 +1,4 @@
-// update office data in database - controller
+// update employee data in database - controller
 
 const Employees = require("../models/Employees.js");
 
