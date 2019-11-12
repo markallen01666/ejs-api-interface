@@ -1,4 +1,4 @@
-// home page - controller
+// About page - controller
 
 module.exports = async (req, res) => {
   res.render("about");
